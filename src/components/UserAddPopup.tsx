@@ -50,6 +50,8 @@ export const UserAddPopup = ({ dialogTitle, setUserData }: Props) => {
 
   const closeRef = React.useRef<HTMLButtonElement | null>(null);
 
+  const resetForm = () => reset();
+
   const handleFormSubmit = (data: FormValues) => {
     const [firstName, ...rest] = data.name.trim().split(" ");
     const lastName = rest.join(" ");
@@ -70,7 +72,7 @@ export const UserAddPopup = ({ dialogTitle, setUserData }: Props) => {
       total: prev.total + 1,
     }));
     closeRef.current?.click();
-    reset();
+    resetForm();
   };
 
   return (
@@ -123,12 +125,14 @@ export const UserAddPopup = ({ dialogTitle, setUserData }: Props) => {
               </Dialog.Body>
               <Dialog.Footer>
                 <Dialog.ActionTrigger asChild>
-                  <Button variant="outline">Cancel</Button>
+                  <Button variant="outline" onClick={resetForm}>
+                    Cancel
+                  </Button>
                 </Dialog.ActionTrigger>
                 <Button type="submit">Submit</Button>
               </Dialog.Footer>
               <Dialog.CloseTrigger asChild>
-                <CloseButton size="sm" />
+                <CloseButton size="sm" onClick={resetForm} />
               </Dialog.CloseTrigger>
             </Dialog.Content>
           </Dialog.Positioner>

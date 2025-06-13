@@ -12,3 +12,33 @@
   height: 40vh;
   width: 70vw;
 }
+
+.custom-scrollbar {
+  overflow: auto;
+}
+
+/* Hide scrollbar initially */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+/* On hover, show thin scrollbar */
+.custom-scrollbar:hover::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #555;
+}

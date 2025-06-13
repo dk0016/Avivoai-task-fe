@@ -10,7 +10,12 @@ export const CustomDataTable = ({
   child,
 }: CustomDataTableProps) => {
   return (
-    <Table.ScrollArea borderWidth="1px" rounded="md" height="400px">
+    <Table.ScrollArea
+      borderWidth="1px"
+      rounded="md"
+      height="400px"
+      className="custom-scrollbar"
+    >
       <Table.Root size="sm" stickyHeader>
         <Table.Header>
           <Table.Row bg="bg.subtle">
